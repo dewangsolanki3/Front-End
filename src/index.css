@@ -12,12 +12,22 @@ code {
     monospace;
 }
 
-.container{
+/* .container{
   height: 100vh;
   width: 100vw;
  
-} 
+}  */
 .leaflet-container{
-  height: 100%;
-  width: 100%;
+  height: 640px;
+  width: 360px;
+}
+.mobile-container{
+  height: 640px;
+  width: 360px;
+  border-style: solid;
+  border-width: 20px;
+  position: absolute;
+  left: 20%;
+  top: 50px;
+  border-radius: 20px;
 }
