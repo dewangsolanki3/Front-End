@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Map, TileLayer, Marker, Circle, CircleMarker, Popup} from 'react-leaflet';
-import bg from './bg.jpg'
+
 import axios from 'axios';
 const hereCredentials = {
     id: 'z546CZ6cCDEN8pnO5p9x',
@@ -27,6 +27,7 @@ class MapContainer extends Component {
         }
         console.log('this is the coord', this.props.center);
         return (
+            
             <div>
             <div className= "mobile-container">
             <Map 
@@ -38,19 +39,31 @@ class MapContainer extends Component {
           url={hereTileURL}
         />
         <CircleMarker center={this.props.center} color="red" radius={10}></CircleMarker>
-        {/* <CircleMarker center={this.state.location1} color="black" radius={10}></CircleMarker>
-        <CircleMarker center={this.state.location2} color="black" radius={10}></CircleMarker> */}
+        <CircleMarker center={this.state.location1} color="black" radius={10}></CircleMarker>
+        <CircleMarker center={this.state.location2} color="black" radius={10}></CircleMarker>
         <Circle center={this.props.center} fillColor="blue" radius={400} />
-        <Circle center={this.state.location1} fillColor="blue" radius={30} />
-        <Circle center={this.state.location2} fillColor="blue" radius={30} />
+        {/* <Circle center={this.state.location1} fillColor="blue" radius={30} />
+        <Circle center={this.state.location2} fillColor="blue" radius={30} /> */}
         <Circle center={this.props.center} fillColor="blue" radius={1000} />
         
         <Marker position = {this.props.center} />
         {/* <Marker position = {this.state.location1} />
         <Marker position =  {this.state.location2}/> */}
         </Map>
+
+        <div id= "Project" >
+        <p>Hello! We have found a match for you :)</p>
+        <div className = "btns">
+        <button>Accept</button>
+        <button style = {{marginLeft: '20px'}}>Reject</button>
         </div>
+    </div>
+        </div >
+        
         </div>
+        
+        
+    
         )
     }
 
